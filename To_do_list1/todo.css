@@ -1,0 +1,33 @@
+.header{
+    background-color: blueviolet;
+    text-align: center;
+    width: 800px;
+    margin-left: 350px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    
+}
+#inp{
+    text-align: center;
+    width: 500px;
+    height: 40px;
+    border: 2px solid;
+    background-color: dimgray;
+}
+
+::placeholder{
+    color: black;
+}
+.box{
+    height:fit-content;
+    width: 800px;
+    background-color:violet;
+    margin-left: 350px;
+    text-align: center;
+}
+.header{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
