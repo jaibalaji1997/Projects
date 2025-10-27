@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .formTable,
+        .formTable td {
+            border: 2px solid black;
+            padding: 2px;
+        }
+
+        .formDiv {
+            height: 400px;
+            width: 500px;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .formTable {
+            height: 250px;
+            width: 400px;
+            margin: auto;
+        }
+
+        .formTable button:hover {
+            cursor: pointer;
+            background-color: aquamarine;
+        }
+
+        .dataDiv {
+            width: 700px;
+            height: fit-content;
+            margin: auto;
+        }
+
+        .dataTable,
+        .dataTr td {
+            border: 2px solid black;
+            height: fit-content;
+            width: 500px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        .dataTr {
+            text-align: center;
+        }
+
+        #resetBtn:hover {
+            cursor: pointer;
+            background-color: aquamarine;
+        }
+
+        #resetBtn {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+
+
+    <div class="container">
+        <div class="formDiv">
+            <h1>STUDENT FORM</h1>
+            <table class="formTable">
+                <tr>
+                    <td class="header">Name</td>
+                    <td><input id="nameInput" type="text" style="padding-left: 5px;height: 100%;width: 97%;"></td>
+                </tr>
+                <tr>
+                    <td class="header">Age</td>
+                    <td><input id="ageInput" type="number" style="padding-left: 5px;height: 100%;width: 97%;"></td>
+                </tr>
+                <tr>
+                    <td class="header">Gender</td>
+                    <td><input class="genderInput" type="radio" name="Gender" value="Male"> Male
+                        <input class="genderInput" type="radio" name="Gender" value="Female"> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td class="header">Course</td>
+                    <td><select id="courseInput" style="padding-left: 5px;height: 100%;width: 100%;">
+                            <option>C++</option>
+                            <option>Java</option>
+                            <option>JavaScript</option>
+                            <option>Python</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="header">E-mail</td>
+                    <td><input id="emailInput" type="email" style="padding-left: 5px;height: 100%;width: 97%;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button style="padding-left: 5px;height: 100%;width: 100%;"
+                            id="saveBtn">Save</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="resetBtn">Reset</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="dataDiv">
+        <table class="dataTable">
+            <thead class="dataThead">
+                <tr class="dataTr" style="font-weight: bolder;">
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Course</td>
+                    <td>E-mail</td>
+                    <td>Gender</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+        let nameInput = document.getElementById("nameInput");
+        let ageInput = document.getElementById("ageInput");
+        let genderInput = document.querySelector(".genderInput");
+        let courseInput = document.getElementById("courseInput");
+        let emailInput = document.getElementById("emailInput");
+        let saveBtn = document.getElementById("saveBtn");
+        let dataThead = document.querySelector(".dataThead");
+
+        saveBtn.addEventListener("click", function () {
+            let Tr = document.createElement("tr");
+            Tr.setAttribute("class", "dataTr");
+            Tr.innerHTML =
+                `<td>${nameInput.value}</td>
+    <td>${ageInput.value}</td>
+    <td>${courseInput.value}</td>
+    <td>${emailInput.value}</td>
+    <td>${genderInput.value}</td>
+    <td><button class = "deleteBtn" style = "background-color:red; color:white;">Delete</button></td>`
+            dataThead.append(Tr);
+            let deleteBtn = document.querySelector(".deleteBtn");
+            deleteBtn.addEventListener("click", function (event) {
+                event.target.parentElement.parentElement.remove()
+            })
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
