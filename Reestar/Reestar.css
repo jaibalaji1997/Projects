@@ -1,0 +1,78 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1%;
+}
+
+li {
+    display: inline;
+    color: grey;
+    text-align: center;
+    padding: 1%;
+    cursor: pointer;
+}
+
+ul :hover {
+    color: greenyellow;
+}
+
+.box {
+    border-style:solid;
+    border-color: black;
+    display: inline-block;
+    width: 15%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.product {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: inline-block;
+}
+
+.box :hover {
+    background-color: black;
+    color: gold;
+    cursor: pointer;
+}
+
+.contact {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 1%;
+    display: block;
+}
+
+table {
+    display: inline-block;
+}
+
+.send {
+    color: black;
+    display: block;
+    background-color: black;
+    text-align: center;
+    border-style: solid;
+
+}
+
+.yello {
+    background-color: yellow;
+    width: 20%;
+    display: inline-block;
+    margin: 0%;
+    cursor: pointer;
+}
